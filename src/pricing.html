@@ -9,11 +9,14 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       background: #f9f9f9;
       color: #333;
     }
     header, footer {
-      background: #007bff;
+      background: #003f7f; /* ciemny niebieski zamiast jasnego */
       color: white;
       text-align: center;
       padding: 20px;
@@ -28,6 +31,7 @@
       text-decoration: underline;
     }
     main {
+      flex: 1;
       padding: 50px 20px;
       text-align: center;
     }
