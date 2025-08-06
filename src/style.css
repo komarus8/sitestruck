@@ -10,7 +10,7 @@ body {
   color: #333;
 }
 
-/* Header i footer wspólne dla wszystkich stron */
+/* Header i footer wspólne */
 header, footer {
   background: #222;
   color: white;
@@ -37,4 +37,97 @@ main {
 
 footer {
   margin-top: auto;
+}
+
+/* Pricing cards */
+.pricing-plans {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.plan {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plan:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.plan h2 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.plan h3 {
+  font-size: 20px;
+  margin: 12px 0;
+  color: #007bff;
+}
+
+.plan p {
+  font-size: 15px;
+  margin-bottom: 18px;
+  color: #555;
+}
+
+.plan button {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.plan button:hover {
+  background: #000;
+}
+
+/* Contact form */
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background: #222;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #000;
 }
