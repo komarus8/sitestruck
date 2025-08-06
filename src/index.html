@@ -1,207 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="logo.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SiteStruck - Home</title>
-  <style>
-    .cta-button {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
-  background: linear-gradient(90deg, #007bff, #0056b3);
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: transform 0.2s, background 0.3s;
-}
-.cta-button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #0056b3, #003f7f);
-}
-
-    .features {
-  background: #f0f4ff;
-  padding: 50px 20px;
-  text-align: center;
-  margin-top: 60px;
-}
-.features h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: #222;
-}
-.feature-list {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap; /* dzięki temu na małych ekranach ułożą się pionowo */
-}
-.feature {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 250px; /* sztywna szerokość dla lepszego rzędu */
-  text-align: center;
-}
-.feature h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #007bff;
-}
-
-    @media (max-width: 600px) {
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-  main {
-    padding: 20px;
-  }
-}
-          .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 400px;
-      margin: 20px auto;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-    .contact-form button {
-      padding: 12px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .contact-form button:hover {
-      background: #0056b3;
-    }
-
-    body { 
-      font-family: Arial, sans-serif; 
-      margin:0; 
-      padding:0; 
-      background:#f9f9f9; 
-      color:#333; 
-      display:flex; 
-      flex-direction:column; 
-      min-height:100vh; 
-    }
-    header, footer { 
-      background:#222; 
-      color:#fff; 
-      text-align:center; 
-      padding:20px; 
-    }
-    nav { 
-      margin-top:10px;
-    }
-    nav a { 
-      margin:0 15px; 
-      color:#fff; 
-      text-decoration:none; 
-      font-weight:bold;
-    }
-    nav a:hover {
-      text-decoration:underline;
-    }
-    main { 
-      flex:1; 
-      display:flex; 
-      flex-direction:column;
-      align-items:center; 
-      justify-content:center; 
-      text-align:center; 
-      padding:40px; 
-    }
-    main img { 
-      margin-top:20px; 
-      border-radius:12px; 
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);
-    }
-    footer { 
-      font-size:14px; 
-    }
-    .cta-button {
-      display:inline-block;
-      margin-top:25px;
-      padding:12px 24px;
-      font-size:18px;
-      font-weight:bold;
-      color:#fff;
-      background:#ff5733;
-      text-decoration:none;
-      border-radius:8px;
-      transition: background 0.3s ease;
-    }
-    .cta-button:hover {
-      background:#e64a19;
-    }
-     .secondary {
-       background: #28a745;
-    }
-     .secondary:hover {
-       background: #218838;
-    }
-
-  </style>
+  <title>Home - SiteStruck</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-  <h1>SiteStruck 💪</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
+    <h1>SiteStruck</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <main>
-    <h2>Welcome to your first website 🚀</h2>
-    <p>
-      With SiteStruck, creating your own professional website has never been easier.  
-      Customize your design, add your logo, and launch your site in minutes.  
-      No coding required — just creativity and a few clicks!
-    </p>
-    <img src="logo.png" alt="Sitestruck logo" width="200">
-
-    <a href="about.html" class="cta-button">Get Started</a>
-    <section class="features">
-  <h2>Why Choose SiteStruck?</h2>
-  <div class="feature-list">
-    <div class="feature">
-      <h3>🚀 Easy Website Builder</h3>
-      <p>Create your site in minutes — no coding required.</p>
-    </div>
-    <div class="feature">
-      <h3>💸 Affordable Plans</h3>
-      <p>Only 55 PLN per month for a full-featured website.</p>
-    </div>
-    <div class="feature">
-      <h3>🌍 Global Access</h3>
-      <p>Your site is fast, secure, and available worldwide.</p>
-    </div>
-  </div>
-    <a href="contact.html" class="cta-button">Start Now</a>
-</section>
-    <a href="about.html" class="cta-button secondary">Learn More</a>
+    <h2>Welcome to SiteStruck 🚀</h2>
+    <p>Create your own website easily and affordably.</p>
+    <button>Get Started</button>
   </main>
 
   <footer>
