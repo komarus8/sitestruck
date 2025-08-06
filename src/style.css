@@ -9,6 +9,14 @@ body {
   background: #f9f9f9;
   color: #333;
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #4CAF50, #2E8B57); 
+  color: #333;
+}
+
 
 /* Header i footer wspólne */
 header, footer {
@@ -144,4 +152,8 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+.icon {
+  width: 60px;
+  margin-bottom: 15px;
 }
