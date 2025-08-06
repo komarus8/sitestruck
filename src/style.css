@@ -205,5 +205,6 @@ button:hover {
 
 .hero button:hover {
   background-color: #45a049;
+  transform: scale(1.08);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
-
