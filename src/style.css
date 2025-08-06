@@ -1,0 +1,40 @@
+/* Reset i baza */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Header i footer wspólne dla wszystkich stron */
+header, footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex: 1;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer {
+  margin-top: auto;
+}
