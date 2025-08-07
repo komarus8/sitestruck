@@ -204,8 +204,7 @@ button:hover {
   margin-bottom: 15px;
 }
 .hero {
-  background: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80
-") no-repeat center center/cover;
+  background: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80") no-repeat center center/cover;
   height: 70vh;
   display: flex;
   align-items: center;
@@ -214,6 +213,7 @@ button:hover {
   text-align: center;
   position: relative;
 }
+
 
 .hero::after {
   content: "";
