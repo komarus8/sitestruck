@@ -254,3 +254,52 @@ button:hover {
   transform: scale(1.08);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
+.testimonials {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 30px 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial .icon {
+  width: 60px;
+  margin-bottom: 15px;
+  filter: brightness(1) saturate(1);
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.testimonial strong {
+  color: #333;
+}
+
