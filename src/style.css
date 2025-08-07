@@ -302,4 +302,50 @@ button:hover {
 .testimonial strong {
   color: #333;
 }
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero {
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .pricing-plans {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial {
+    max-width: 90%;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  header img {
+    width: 60px;
+    height: auto;
+  }
+
+  .cta-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 
