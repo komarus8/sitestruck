@@ -204,15 +204,15 @@ button:hover {
   margin-bottom: 15px;
 }
 .hero {
-  background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1470&q=80');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f") no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   text-align: center;
-  padding: 100px 20px;
+  position: relative;
 }
-
 
 .hero::after {
   content: "";
