@@ -434,9 +434,9 @@ button:hover {
   }
 }
 .main-header {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
+  background-color: #f8f9fa; /* jasnoszare tło */
+  border-bottom: 1px solid #ccc;
+  padding: 14px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -455,9 +455,9 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 24px;
-  color: #333;
+  color: #222;
 }
 
 .logo img {
@@ -508,5 +508,3 @@ button:hover {
     margin-right: 15px;
   }
 }
-
-
