@@ -433,4 +433,80 @@ button:hover {
     display: flex;
   }
 }
+.main-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
+}
+
+.logo img {
+  height: 32px;
+  width: 32px;
+}
+
+.navbar a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #4CAF50;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    margin-top: 10px;
+  }
+
+  .navbar a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+}
+
 
