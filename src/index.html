@@ -91,6 +91,7 @@
     navLinks.classList.toggle('show');
   });
 </script>
+  
 <script>
   const faders = document.querySelectorAll('.fade-in');
 
@@ -109,6 +110,18 @@
   faders.forEach(fader => {
     appearOnScroll.observe(fader);
   });
+</script>
+  <script>
+if (localStorage.getItem('loggedIn') === 'true') {
+  document.getElementById('logoutBtn').style.display = 'inline-block';
+  document.getElementById('loginBtn').style.display = 'none';
+}
+
+document.getElementById('logoutBtn')?.addEventListener('click', function() {
+  localStorage.removeItem('loggedIn');
+  alert('You have been logged out.');
+  window.location.reload();
+});
 </script>
 
 </body>
