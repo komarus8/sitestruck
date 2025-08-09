@@ -44,7 +44,17 @@ main {
 }
 
 footer {
-  margin-top: auto;
+  background: #1f1f1f;
+  color: #ccc;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
+
+footer p {
+  margin: 0;
 }
 
 /* Pricing cards */
