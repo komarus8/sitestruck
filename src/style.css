@@ -34,7 +34,7 @@ nav a {
 }
 
 nav a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 main {
@@ -418,30 +418,5 @@ button:hover {
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
-}
-.navbar a {
-  position: relative;
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s ease;
-}
-
-.navbar a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -3px;
-  left: 0;
-  background-color: white;
-  transition: width 0.3s ease;
-}
-
-.navbar a:hover {
-  color: #ddd;
-}
-
-.navbar a:hover::after {
-  width: 100%;
 }
 
