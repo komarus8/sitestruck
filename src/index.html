@@ -123,6 +123,16 @@ document.getElementById('logoutBtn')?.addEventListener('click', function() {
   window.location.reload();
 });
 </script>
+<script>
+document.addEventListener('scroll', () => {
+  document.querySelectorAll('section').forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      sec.classList.add('visible');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
