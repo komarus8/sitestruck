@@ -419,4 +419,16 @@ button:hover {
   opacity: 1;
   transform: translateY(0);
 }
+.main-header {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
