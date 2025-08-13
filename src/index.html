@@ -123,11 +123,20 @@ document.getElementById('logoutBtn')?.addEventListener('click', function() {
   window.location.reload();
 });
 </script>
-  <script>
+ <script>
   const user = JSON.parse(localStorage.getItem('user'));
   const loggedIn = localStorage.getItem('loggedIn');
+  const loginBtn = document.getElementById('login-btn');
 
   if (loggedIn && user) {
+    loginBtn.textContent = 'Logout';
+    loginBtn.href = '#';
+    loginBtn.addEventListener('click', () => {
+      localStorage.removeItem('loggedIn');
+      alert('You have been logged out.');
+      window.location.reload();
+    });
+
     const header = document.querySelector('.navbar');
     const welcome = document.createElement('span');
     welcome.textContent = `Hello, ${user.username}`;
@@ -135,6 +144,7 @@ document.getElementById('logoutBtn')?.addEventListener('click', function() {
     header.appendChild(welcome);
   }
 </script>
+
 
 
 </body>
