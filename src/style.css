@@ -445,4 +445,17 @@ footer {
   bottom: 0;
   width: 100%;
 }
+#login-btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#login-btn:hover {
+  background-color: #43a047;
+}
 
