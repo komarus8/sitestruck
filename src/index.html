@@ -123,6 +123,19 @@ document.getElementById('logoutBtn')?.addEventListener('click', function() {
   window.location.reload();
 });
 </script>
+  <script>
+  const user = JSON.parse(localStorage.getItem('user'));
+  const loggedIn = localStorage.getItem('loggedIn');
+
+  if (loggedIn && user) {
+    const header = document.querySelector('.navbar');
+    const welcome = document.createElement('span');
+    welcome.textContent = `Hello, ${user.username}`;
+    welcome.style.marginLeft = '20px';
+    header.appendChild(welcome);
+  }
+</script>
+
 
 </body>
 </html>
