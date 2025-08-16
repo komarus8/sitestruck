@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="logo.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register - SiteStruck</title>
   <link rel="stylesheet" href="style.css">
-  <script src="auth.js" defer></script>
 </head>
-<body>
-  <header class="main-header">
-    <div class="logo-container">
-      <img src="logo.png" alt="Logo" class="logo">
-      <span class="site-name">SiteStruck</span>
-    </div>
-  </header>
+<body class="auth-page">
 
-  <section class="form-container">
+  <div class="auth-card">
     <h2>Register</h2>
-    <form id="register-form">
-      <input type="text" id="register-username" placeholder="Username" required>
-      <input type="password" id="register-password" placeholder="Password" required>
-      <button type="submit">Register</button>
+    <form action="#">
+      <input type="text" placeholder="Username" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
     </form>
-    <p>Already have an account? <a href="login.html">Login</a></p>
-  </section>
+    <p>Have an account? <a href="login.html">Login</a></p>
+  </div>
+
 </body>
 </html>
-
-
