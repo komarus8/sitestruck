@@ -495,4 +495,7 @@ footer {
 .form-container button:hover {
   background: #45a049;
 }
+html, body {
+  overflow-x: hidden;
+}
 
