@@ -19,6 +19,7 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="login.html" class="login-btn">Login</a>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
   </nav>
 </header>
 
@@ -58,6 +59,29 @@
   });
 </script>
   <script src="auth.js" defer></script>
+  <script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Sprawdź, czy w localStorage jest zapisany tryb
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    toggleBtn.textContent = '☀️';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+      toggleBtn.textContent = '☀️';
+    } else {
+      localStorage.setItem('theme', 'light');
+      toggleBtn.textContent = '🌙';
+    }
+  });
+</script>
+
 </body>
 </html>
 
