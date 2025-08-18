@@ -607,4 +607,59 @@ body.dark-mode {
   transform: scale(1.2);
   transition: 0.3s ease;
 }
+/* DARK MODE STYLES */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.dark-mode header.main-header {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.dark-mode .navbar a {
+  color: #f1f1f1;
+}
+
+.dark-mode .navbar a:hover {
+  color: #ff9800; /* fajny pomarańczowy akcent */
+}
+
+.dark-mode .theme-toggle {
+  color: #f1f1f1;
+}
+
+/* Przyciski w dark mode */
+.dark-mode .btn,
+.dark-mode button,
+.dark-mode input[type="submit"] {
+  background-color: #333;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+.dark-mode .btn:hover,
+.dark-mode button:hover,
+.dark-mode input[type="submit"]:hover {
+  background-color: #444;
+}
+
+/* Pola formularzy w dark mode */
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #aaa;
+}
+
+/* Sekcje i boxy */
+.dark-mode section {
+  background-color: #1a1a1a;
+}
 
