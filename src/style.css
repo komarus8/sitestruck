@@ -783,4 +783,18 @@ body.dark-mode textarea::placeholder {
 body.dark-mode footer {
   background-color: #2a2a2a;
 }
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode a {
+  color: #90caf9;
+}
 
