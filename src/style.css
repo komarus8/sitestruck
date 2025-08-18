@@ -662,4 +662,60 @@ body.dark-mode {
 .dark-mode section {
   background-color: #1a1a1a;
 }
+/* UŁATWIAMY ANIMACJE */
+body, header, nav, section, input, textarea, button {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* DARK MODE STYLES */
+body.dark-mode {
+  background-color: #1e1e1e; /* ciemny, ale nie czarny */
+  color: #e4e4e4;
+}
+
+.dark-mode header.main-header {
+  background-color: #2a2a2a; /* trochę jaśniejsze niż body */
+  border-bottom: 1px solid #444;
+}
+
+.dark-mode .navbar a {
+  color: #e4e4e4;
+}
+
+.dark-mode .navbar a:hover {
+  color: #ff9800; /* delikatny akcent */
+}
+
+/* Przyciski */
+.dark-mode .btn,
+.dark-mode button,
+.dark-mode input[type="submit"] {
+  background-color: #3a3a3a; /* grafit */
+  color: #f8f8f8;
+  border: 1px solid #555;
+}
+
+.dark-mode .btn:hover,
+.dark-mode button:hover,
+.dark-mode input[type="submit"]:hover {
+  background-color: #4a4a4a; /* lekko jaśniejszy na hover */
+}
+
+/* Pola formularzy */
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #2b2b2b;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #aaa;
+}
+
+/* Sekcje / kontenery */
+.dark-mode section {
+  background-color: #242424;
+}
 
