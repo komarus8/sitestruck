@@ -718,4 +718,69 @@ body.dark-mode {
 .dark-mode section {
   background-color: #242424;
 }
+/* ANIMACJE PŁYNNE */
+body, header, nav, section, footer, input, textarea, button, .card {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* === DARK MODE === */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #e4e4e4;
+}
+
+/* HEADER */
+body.dark-mode header.main-header {
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #444;
+}
+
+/* LINKI NAV */
+body.dark-mode .navbar a {
+  color: #ddd;
+}
+
+body.dark-mode .navbar a:hover {
+  color: #ffb84d; /* lekki pomarańcz dla kontrastu */
+}
+
+/* KARTY / BLOKI */
+body.dark-mode .card,
+body.dark-mode section {
+  background-color: #2c2c2c;
+  border-radius: 8px;
+}
+
+/* PRZYCISKI */
+body.dark-mode .btn,
+body.dark-mode button,
+body.dark-mode input[type="submit"] {
+  background-color: #333;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+body.dark-mode .btn:hover,
+body.dark-mode button:hover,
+body.dark-mode input[type="submit"]:hover {
+  background-color: #444;
+}
+
+/* FORMULARZE */
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa;
+}
+
+/* STOPKA */
+body.dark-mode footer {
+  background-color: #2a2a2a;
+}
 
