@@ -30,13 +30,16 @@ function googleTranslateElementInit() {
 }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script type="text/javascript">
+<script>
 function changeLanguage(lang) {
-    var combo = document.querySelector('.goog-te-combo');
-    if (combo) {
-        combo.value = lang;
-        combo.dispatchEvent(new Event('change'));
-    }
+    const interval = setInterval(() => {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+            combo.value = lang;
+            combo.dispatchEvent(new Event('change'));
+            clearInterval(interval);
+        }
+    }, 500);
 }
 
 function googleTranslateElementInit() {
@@ -47,8 +50,9 @@ function googleTranslateElementInit() {
     }, 'google_translate_element');
 }
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<div id="google_translate_element" style="display:none;"></div>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<div id="google_translate_element"></div>
+
 
 </body>
 </html>
