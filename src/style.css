@@ -603,5 +603,19 @@ input, button {
 .language-switcher img:hover {
     transform: scale(1.2);
 }
+/* Ukryj brzydkie elementy Google Translate */
+#google_translate_element {
+    display: none !important;
+}
+
+.goog-te-banner-frame,
+.goog-te-menu-frame,
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+.goog-te-combo {
+    display: none !important;
+}
 
 
