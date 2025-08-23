@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreator Stron</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Kreator Stron</h1>
+        <a href="index.html" class="btn">Wyloguj</a>
+    </header>
 
+    <main class="generator-container">
+        <h2>Wypełnij dane i wygeneruj stronę</h2>
+        <form id="generator-form">
+            <label>Nazwa strony:</label>
+            <input type="text" id="site-name" placeholder="Moja Strona" required>
+
+            <label>Sekcje do dodania:</label>
+            <div>
+                <input type="checkbox" name="sections" value="Home" checked> Home
+                <input type="checkbox" name="sections" value="About" checked> About
+                <input type="checkbox" name="sections" value="Contact"> Contact
+                <input type="checkbox" name="sections" value="Blog"> Blog
+            </div>
+
+            <label>Kolor główny:</label>
+            <input type="color" id="main-color" value="#3498db">
+
+            <label>Czcionka:</label>
+            <select id="font-family">
+                <option value="Arial">Arial</option>
+                <option value="Poppins">Poppins</option>
+                <option value="Roboto">Roboto</option>
+            </select>
+
+            <button type="submit" class="btn">Generuj stronę</button>
+        </form>
+
+        <div id="result" style="margin-top:20px;"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
