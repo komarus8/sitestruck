@@ -18,6 +18,21 @@
     </form>
     <p>Don't have an account? <a href="register.html">Register</a></p>
   </div>
+<script>
+document.getElementById("login-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Zapobiega odświeżeniu strony
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // Prosta walidacja (dla testów)
+    if(username === "admin" && password === "1234") {
+        alert("Zalogowano pomyślnie!");
+        window.location.href = "generator.html";
+    } else {
+        alert("Nieprawidłowe dane logowania!");
+    }
+});
+</script>
 
 </body>
 </html>
