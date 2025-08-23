@@ -20,14 +20,6 @@
     <a href="contact.html">Contact</a>
     <a href="#" id="logoutBtn" style="display:none;">Logout</a>
     <a href="login.html" class="login-btn">Login</a>
-  </nav>
-   <div class="language-switcher">
-    <img src="https://flagcdn.com/w20/pl.png" alt="Polski" onclick="changeLanguage('pl')" />
-    <img src="https://flagcdn.com/w20/gb.png" alt="English" onclick="changeLanguage('en')" />
-    <img src="https://flagcdn.com/w20/de.png" alt="Deutsch" onclick="changeLanguage('de')" />
-    <img src="https://flagcdn.com/w20/fr.png" alt="Français" onclick="changeLanguage('fr')" />
-    <img src="https://flagcdn.com/w20/es.png" alt="Español" onclick="changeLanguage('es')" />
-</div>
 </header>
 
   <section class="hero" class="fade-in">
@@ -153,41 +145,6 @@ document.getElementById('logoutBtn')?.addEventListener('click', function() {
 </script>
 
 <script src="auth.js" defer></script>
-
-<!-- Translator -->
-<div id="google_translate_element" style="position: fixed; top: 10px; right: 10px; z-index: 9999;"></div>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {pageLanguage: 'pl', includedLanguages: 'pl,en,de,fr,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
-    'google_translate_element'
-  );
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>
-function changeLanguage(lang) {
-    const interval = setInterval(() => {
-        const combo = document.querySelector('.goog-te-combo');
-        if (combo) {
-            combo.value = lang;
-            combo.dispatchEvent(new Event('change'));
-            clearInterval(interval);
-        }
-    }, 500);
-}
-
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'pl',
-        includedLanguages: 'pl,en,de,fr,es',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-}
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<div id="google_translate_element"></div>
 
 
 
