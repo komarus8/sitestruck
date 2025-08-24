@@ -12,13 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 .map(el => el.value);
 
             document.getElementById("result").innerHTML = `
-                <h3>Twoja strona:</h3>
-                <p><strong>Nazwa:</strong> ${name}</p>
-                <p><strong>Kolor:</strong> ${color}</p>
-                <p><strong>Czcionka:</strong> ${font}</p>
-                <p><strong>Sekcje:</strong> ${sections.join(", ")}</p>
+                <h3>Your Website:</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Main Color:</strong> ${color}</p>
+                <p><strong>Font:</strong> ${font}</p>
+                <p><strong>Sections:</strong> ${sections.join(", ")}</p>
             `;
         });
     }
 });
-
