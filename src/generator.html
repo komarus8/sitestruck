@@ -1,47 +1,101 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kreator Stron</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Website Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #result {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
-    <header class="main-header">
-        <h1>Kreator Stron</h1>
-        <a href="index.html" class="btn">Wyloguj</a>
-    </header>
+    <h1>Website Builder</h1>
+    <form id="generator-form">
+        <label for="site-name">Website Name:</label>
+        <input type="text" id="site-name" placeholder="My Website" required>
 
-    <main class="generator-container">
-        <h2>Wypełnij dane i wygeneruj stronę</h2>
-        <form id="generator-form">
-            <label>Nazwa strony:</label>
-            <input type="text" id="site-name" placeholder="Moja Strona" required>
+        <label for="main-color">Main Color:</label>
+        <input type="color" id="main-color" value="#007bff">
 
-            <label>Sekcje do dodania:</label>
-            <div>
-                <input type="checkbox" name="sections" value="Home" checked> Home
-                <input type="checkbox" name="sections" value="About" checked> About
-                <input type="checkbox" name="sections" value="Contact"> Contact
-                <input type="checkbox" name="sections" value="Blog"> Blog
-            </div>
+        <label for="font-family">Font Family:</label>
+        <select id="font-family">
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Tahoma">Tahoma</option>
+        </select>
 
-            <label>Kolor główny:</label>
-            <input type="color" id="main-color" value="#3498db">
+        <label>Sections:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="sections" value="Header"> Header</label>
+            <label><input type="checkbox" name="sections" value="About"> About</label>
+            <label><input type="checkbox" name="sections" value="Services"> Services</label>
+            <label><input type="checkbox" name="sections" value="Contact"> Contact</label>
+            <label><input type="checkbox" name="sections" value="Footer"> Footer</label>
+        </div>
 
-            <label>Czcionka:</label>
-            <select id="font-family">
-                <option value="Arial">Arial</option>
-                <option value="Poppins">Poppins</option>
-                <option value="Roboto">Roboto</option>
-            </select>
+        <button type="submit">Generate</button>
+    </form>
 
-            <button type="submit" class="btn">Generuj stronę</button>
-        </form>
+    <div id="result"></div>
 
-        <div id="result" style="margin-top:20px;"></div>
-    </main>
-
-    <script src="script.js"></script>
+    <script src="generator.js"></script>
 </body>
 </html>
+
