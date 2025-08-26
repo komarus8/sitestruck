@@ -1,4 +1,4 @@
-// ======= REJESTRACJA =======
+// ======= REGISTER =======
 const registerForm = document.getElementById('register-form');
 if (registerForm) {
     registerForm.addEventListener('submit', (e) => {
@@ -16,7 +16,7 @@ if (registerForm) {
     });
 }
 
-// ======= LOGOWANIE =======
+// ======= LOGIN =======
 const loginForm = document.getElementById('login-form');
 if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
@@ -35,16 +35,17 @@ if (loginForm) {
     });
 }
 
-// ======= SPRAWDZENIE STANU NA STRONIE GŁÓWNEJ =======
-if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+// ======= CHECK LOGIN STATUS & NAVBAR =======
+document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const user = localStorage.getItem('loggedInUser');
 
-    if (user) {
-        const userSpan = document.createElement('span');
-        userSpan.textContent = `Witaj, ${user}`;
-        userSpan.style.marginLeft = '20px';
-        userSpan.style.fontWeight = 'bold';
+    if (navbar && user) {
+        const userInfo = document.createElement('span');
+        userInfo.textContent = `Hello, ${user}`;
+        userInfo.style.marginLeft = '20px';
+        userInfo.style.fontWeight = 'bold';
+        userInfo.style.color = '#fff';
 
         const logoutBtn = document.createElement('button');
         logoutBtn.textContent = 'Logout';
@@ -58,15 +59,14 @@ if (window.location.pathname.includes('index.html') || window.location.pathname 
 
         logoutBtn.addEventListener('click', () => {
             localStorage.removeItem('loggedInUser');
-            window.location.reload();
+            window.location.href = 'login.html';
         });
 
-        navbar.appendChild(userSpan);
+        navbar.appendChild(userInfo);
         navbar.appendChild(logoutBtn);
 
-        // Ukryj przycisk login
-        const loginLink = document.querySelector('.login-btn');
-        if (loginLink) loginLink.style.display = 'none';
+        // Hide login button if exists
+        const loginBtn = document.querySelector('.login-btn');
+        if (loginBtn) loginBtn.style.display = 'none';
     }
-}
-
+});
