@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <header class="main-header">
-  <div class="logo-container" class="plan fade-in">
+
+<header class="main-header">
+  <div class="logo-container">
     <img src="logo.png" alt="Logo" class="logo">
     <span class="site-name">SiteStruck</span>
   </div>
@@ -18,142 +19,47 @@
     <a href="pricing.html">Pricing</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="generator.html">Generator</a>
+    <a href="login.html" class="login-btn" id="loginBtn">Login</a>
     <a href="#" id="logoutBtn" style="display:none;">Logout</a>
-    <a href="login.html" class="login-btn">Login</a>
-    <div class="navbar" style="background:#333; padding:10px; color:white; display:flex; align-items:center;">
-  <a href="index.html" style="color:white; margin-right:20px;">Home</a>
-  <a href="generator.html" style="color:white; margin-right:20px;">Generator</a>
-  <a href="login.html" class="login-btn" style="color:white;">Login</a>
-</div>
+    <span id="welcomeUser" style="margin-left:20px; font-weight:bold;"></span>
+  </nav>
 </header>
 
-  <section class="hero" class="fade-in">
-  <div class="hero-content" class="plan fade-in">
-    <h1>Create Your Website Effortlessly</h1>
-    <p>With SiteStruck, building a professional site takes minutes, not months.</p>
-    <button>Start Now</button>
-  </div>
-</section>
-
-  <main>
-    <h2>Welcome to SiteStruck 🚀</h2>
-    <p>Create your own professional website in minutes without coding.</p>
-    <button>Get Started</button>
-
-   <section class="fade-in">
-  <h2>Why Choose SiteStruck?</h2>
-  <div class="pricing-plans" class="plan fade-in">
-    <div class="plan" class="plan fade-in">
-      <img src="https://img.icons8.com/ios-filled/100/4caf50/cursor.png" alt="Easy Icon" class="icon">
-      <h2>Easy to Use</h2>
-      <p>Drag, drop, and create your dream site effortlessly.</p>
+<main>
+  <section class="hero fade-in">
+    <div class="hero-content">
+      <h1>Create Your Website Effortlessly</h1>
+      <p>With SiteStruck, building a professional site takes minutes, not months.</p>
+      <button>Start Now</button>
     </div>
-    <div class="plan" class="plan fade-in">
-      <img src="https://img.icons8.com/ios-filled/100/4caf50/money.png" alt="Affordable Icon" class="icon">
-      <h2>Affordable</h2>
-      <p>Plans starting at just 55 PLN/month.</p>
-    </div>
-    <div class="plan" class="plan fade-in">
-      <img src="https://img.icons8.com/ios-filled/100/4caf50/security-checked.png" alt="Reliable Icon" class="icon">
-      <h2>Reliable</h2>
-      <p>Fast, secure, and always online for your customers.</p>
-    </div>
-  </div>
-</section>
-    <section class="testimonials" class="fade-in">
-  <h2>What Our Clients Say</h2>
-  <div class="testimonial-cards" class="plan fade-in">
-    <div class="testimonial" class="plan fade-in">
-      <img src="https://img.icons8.com/ios-filled/100/4caf50/user.png" alt="Client 1" class="icon">
-      <p>"Thanks to SiteStruck, my website was online in minutes. Super easy!"</p>
-      <strong>— Annie K.</strong>
-    </div>
-    <div class="testimonial" class="plan fade-in">
-      <img src="https://img.icons8.com/ios-filled/100/4caf50/user.png" alt="Client 2" class="icon">
-      <p>"I’ve tried many builders, but this one’s the best. Affordable and powerful."</p>
-      <strong>— Michael W.</strong>
-    </div>
-    <div class="testimonial" class="plan fade-in">
-      <img src="https://img.icons8.com/ios-filled/100/4caf50/user.png" alt="Client 3" class="icon">
-      <p>"Fast, reliable and support helped me instantly. 10/10!"</p>
-      <strong>— Katty B.</strong>
-    </div>
-  </div>
-</section>
+  </section>
 
+  <h2>Welcome to SiteStruck 🚀</h2>
+  <p>Create your own professional website in minutes without coding.</p>
+  <button>Get Started</button>
 
-  </main>
+  <!-- Reszta sekcji jak była -->
+</main>
 
-  <footer>
-    <p>&copy; 2025 SiteStruck. All rights reserved.</p>
-  </footer>
-  <script>
-  const burger = document.getElementById('burger');
-  const navLinks = document.getElementById('nav-links');
-
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-</script>
-  
-<script>
-  const faders = document.querySelectorAll('.fade-in');
-
-  const appearOnScroll = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
-</script>
-  <script>
-if (localStorage.getItem('loggedIn') === 'true') {
-  document.getElementById('logoutBtn').style.display = 'inline-block';
-  document.getElementById('loginBtn').style.display = 'none';
-}
-
-document.getElementById('logoutBtn')?.addEventListener('click', function() {
-  localStorage.removeItem('loggedIn');
-  alert('You have been logged out.');
-  window.location.reload();
-});
-</script>
- <script>
-  const user = JSON.parse(localStorage.getItem('user'));
-  const loggedIn = localStorage.getItem('loggedIn');
-  const loginBtn = document.getElementById('login-btn');
-
-  if (loggedIn && user) {
-    loginBtn.textContent = 'Logout';
-    loginBtn.href = '#';
-    loginBtn.addEventListener('click', () => {
-      localStorage.removeItem('loggedIn');
-      alert('You have been logged out.');
-      window.location.reload();
-    });
-
-    const header = document.querySelector('.navbar');
-    const welcome = document.createElement('span');
-    welcome.textContent = `Hello, ${user.username}`;
-    welcome.style.marginLeft = '20px';
-    header.appendChild(welcome);
-  }
-</script>
+<footer>
+  <p>&copy; 2025 SiteStruck. All rights reserved.</p>
+</footer>
 
 <script src="auth.js" defer></script>
-
-
+<script>
+  // Animacja scrollowania
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
 
 </body>
 </html>
-
-
