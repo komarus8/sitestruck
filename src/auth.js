@@ -239,3 +239,61 @@ document.addEventListener("DOMContentLoaded", () => {
   wireGenerator();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const reviewForm = document.getElementById("review-form");
+    const reviewFormContainer = document.getElementById("review-form-container");
+    const loginWarning = document.getElementById("login-warning");
+    const reviewsList = document.getElementById("reviews-list");
+    const avgStarsEl = document.getElementById("avg-stars");
+
+    const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    const hasPurchase = currentUser && currentUser.hasPurchase === true;
+
+    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+    function renderReviews() {
+        reviewsList.innerHTML = "";
+        let totalRating = 0;
+
+        reviews.forEach(review => {
+            const div = document.createElement("div");
+            div.classList.add("review-item");
+            div.innerHTML = `
+                <strong>${review.user}</strong> - ${review.rating} ★
+                <p>${review.text}</p>
+            `;
+            reviewsList.appendChild(div);
+            totalRating += review.rating;
+        });
+
+        const avg = reviews.length ? (totalRating / reviews.length).toFixed(1) : 0;
+        avgStarsEl.textContent = avg;
+    }
+
+    if (currentUser && hasPurchase) {
+        reviewFormContainer.style.display = "block";
+    } else {
+        loginWarning.style.display = "block";
+    }
+
+    reviewForm.addEventListener("submit", e => {
+        e.preventDefault();
+
+        const text = document.getElementById("review-text").value.trim();
+        const rating = parseInt(document.getElementById("review-rating").value);
+
+        if (!text) return;
+
+        reviews.push({
+            user: currentUser.username,
+            text,
+            rating
+        });
+
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+        reviewForm.reset();
+        renderReviews();
+    });
+
+    renderReviews();
+});
