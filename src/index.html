@@ -1,65 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header class="main-header">
-  <div class="logo-container">
-    <img src="logo.png" alt="Logo" class="logo">
-    <span class="site-name">SiteStruck</span>
+  <div class="header-left">
+    <img class="logo" src="logo.png" alt="Logo">
+    <div class="site-name">SiteStruck</div>
   </div>
   <nav class="navbar">
     <a href="index.html">Home</a>
-    <a href="generator.html">Generator</a>
     <a href="pricing.html">Pricing</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="login.html" class="login-btn" id="loginBtn">Login</a>
-    <a href="#" id="logoutBtn" style="display:none;">Logout</a>
-    <span id="welcomeUser" style="margin-left:20px; font-weight:bold;"></span>
+    <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
   </nav>
 </header>
 
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Create your website in minutes</h1>
+    <p>Beautiful, responsive, and fast — without touching code.</p>
+    <a class="btn" href="pricing.html">Get Started</a>
+  </div>
+</section>
+
 <main>
-  <section class="hero fade-in">
-    <div class="hero-content">
-      <h1>Create Your Website Effortlessly</h1>
-      <p>With SiteStruck, building a professional site takes minutes, not months.</p>
-      <button>Start Now</button>
+  <section class="section">
+    <div class="container">
+      <h2>Why choose SiteStruck?</h2>
+      <div class="grid-3">
+        <div class="card">
+          <img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/cursor.png" alt="Easy">
+          <h3>Easy</h3>
+          <p>Drag, drop, publish. Create confidently.</p>
+        </div>
+        <div class="card">
+          <img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/money.png" alt="Affordable">
+          <h3>Affordable</h3>
+          <p>Plans from just 55 PLN/month.</p>
+        </div>
+        <div class="card">
+          <img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/security-checked.png" alt="Reliable">
+          <h3>Reliable</h3>
+          <p>Fast, secure, and always online.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <h2>Welcome to SiteStruck 🚀</h2>
-  <p>Create your own professional website in minutes without coding.</p>
-  <button>Get Started</button>
-
-  <!-- Reszta sekcji jak była -->
+  <section class="section testimonials">
+    <div class="container">
+      <h2>What our clients say</h2>
+      <div class="grid-3">
+        <div class="card">
+          <img class="avatar" src="https://i.pravatar.cc/120?img=5" alt="Client 1">
+          <p>"SiteStruck got me online in minutes. Super easy!"</p>
+          <strong>— Annie K.</strong>
+        </div>
+        <div class="card">
+          <img class="avatar" src="https://i.pravatar.cc/120?img=15" alt="Client 2">
+          <p>"Best builder I tried. Affordable and powerful."</p>
+          <strong>— Michael W.</strong>
+        </div>
+        <div class="card">
+          <img class="avatar" src="https://i.pravatar.cc/120?img=30" alt="Client 3">
+          <p>"Fast, reliable, and great support. 10/10!"</p>
+          <strong>— Katty B.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer>
-  <p>&copy; 2025 SiteStruck. All rights reserved.</p>
-</footer>
-
-<script src="auth.js" defer></script>
-<script>
-  // Animacja scrollowania
-  const faders = document.querySelectorAll('.fade-in');
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  faders.forEach(fader => appearOnScroll.observe(fader));
-</script>
-
+<footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
+<script src="auth.js"></script>
 </body>
 </html>
