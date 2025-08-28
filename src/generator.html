@@ -1,78 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Generator - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- JSZip CDN for ZIP creation -->
-  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header class="main-header">
-  <div class="header-left">
-    <img class="logo" src="logo.png" alt="Logo">
-    <div class="site-name">SiteStruck</div>
-  </div>
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
-  </nav>
+    <div class="logo">MyWeb</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="generator.html" class="active">Generator</a></li>
+            <li><a href="login.html" class="btn">Login</a></li>
+        </ul>
+    </nav>
 </header>
 
-<main>
-  <section class="section">
-    <div class="container">
-      <h2 class="center">Website generator</h2>
-      <div class="form-card">
-        <form id="generator-form">
-          <div class="form-row">
-            <label for="site-name">Site name</label>
-            <input id="site-name" type="text" placeholder="My Site" required>
-          </div>
+<main class="container">
+    <h1>Website Generator</h1>
+    <form id="generator-form">
+        <label>Website Name:</label>
+        <input type="text" id="site-name" placeholder="Enter your website name" required>
 
-          <div class="form-row">
-            <label>Sections</label>
-            <div style="display:flex; gap:16px; flex-wrap:wrap">
-              <label><input type="checkbox" name="sections" value="Home" checked> Home</label>
-              <label><input type="checkbox" name="sections" value="About" checked> About</label>
-              <label><input type="checkbox" name="sections" value="Contact" checked> Contact</label>
-              <label><input type="checkbox" name="sections" value="Blog"> Blog</label>
-            </div>
-          </div>
+        <label>Main Color:</label>
+        <input type="color" id="main-color" value="#3498db">
 
-          <div class="form-row">
-            <label for="main-color">Main color</label>
-            <input id="main-color" type="color" value="#4caf50">
-          </div>
+        <label>Font Family:</label>
+        <select id="font-family">
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Tahoma">Tahoma</option>
+        </select>
 
-          <div class="form-row">
-            <label for="font-family">Font</label>
-            <select id="font-family">
-              <option value="Arial">Arial</option>
-              <option value="Poppins">Poppins</option>
-              <option value="Roboto">Roboto</option>
-            </select>
-          </div>
+        <label>Sections:</label>
+        <div>
+            <input type="checkbox" name="sections" value="About" checked> About
+            <input type="checkbox" name="sections" value="Services"> Services
+            <input type="checkbox" name="sections" value="Contact"> Contact
+        </div>
 
-          <div class="form-actions">
-            <button class="btn" type="submit">Generate ZIP</button>
-            <span style="color:#666">You’ll download a ready-to-edit project.</span>
-          </div>
-        </form>
-      </div>
+        <button type="submit">Generate</button>
+    </form>
 
-      <div id="result" class="center mt-32"></div>
-    </div>
-  </section>
+    <div id="result" class="result-box"></div>
+    <button id="downloadBtn" style="display:none;">Download as ZIP</button>
 </main>
 
-<footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
-<script src="auth.js"></script>
+<script src="generator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </body>
 </html>
