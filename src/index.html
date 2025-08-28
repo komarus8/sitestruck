@@ -77,6 +77,34 @@
       </div>
     </div>
   </section>
+
+  <section class="reviews-section">
+    <h2>Customer Reviews</h2>
+    <div id="average-rating">Average rating: <span id="avg-stars">0</span> ★</div>
+    <div id="reviews-list"></div>
+
+    <!-- Formularz opinii (tylko dla zalogowanych) -->
+    <div id="review-form-container" style="display: none;">
+        <h3>Add Your Review</h3>
+        <form id="review-form">
+            <label for="review-text">Your review:</label>
+            <textarea id="review-text" required></textarea>
+
+            <label for="review-rating">Rating (1-5):</label>
+            <select id="review-rating" required>
+                <option value="1">1 ★</option>
+                <option value="2">2 ★★</option>
+                <option value="3">3 ★★★</option>
+                <option value="4">4 ★★★★</option>
+                <option value="5">5 ★★★★★</option>
+            </select>
+
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+    <p id="login-warning" style="color:red; display:none;">You must be logged in and have a purchase to add a review.</p>
+</section>
+
 </main>
 
 <footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
