@@ -175,5 +175,42 @@ footer {
 .mt-32 { margin-top: 32px; }
 .hidden { display: none !important; }
 
+.reviews-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#reviews-list {
+    margin-top: 20px;
+}
+
+.review-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.review-item strong {
+    color: #333;
+}
+
+#review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#review-form textarea {
+    min-height: 80px;
+    resize: vertical;
+    padding: 10px;
+}
 
 
