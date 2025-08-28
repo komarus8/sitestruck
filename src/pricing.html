@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pricing - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
 <header class="main-header">
-  <div class="logo-container">
-    <img src="logo.png" alt="Logo" class="logo">
-    <span class="site-name">SiteStruck</span>
+  <div class="header-left">
+    <img class="logo" src="logo.png" alt="Logo">
+    <div class="site-name">SiteStruck</div>
   </div>
   <nav class="navbar">
     <a href="index.html">Home</a>
-    <a href="generator.html">Generator</a>
     <a href="pricing.html">Pricing</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="login.html" id="loginBtn" class="login-btn">Login</a>
-    <a href="#" id="logoutBtn" style="display:none;">Logout</a>
-    <span id="welcomeUser" style="margin-left:15px; font-weight:bold;"></span>
+    <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
   </nav>
 </header>
 
-
-  <main>
-    <h2>Choose Your Plan</h2>
-    <div class="pricing-plans" class="plan fade-in">
-      <div class="plan" class="plan fade-in">
-        <h2>Basic</h2>
-        <p>Perfect for personal projects or small portfolios.</p>
-        <h3>55 PLN / month</h3>
-        <button>Subscribe</button>
-      </div>
-      <div class="plan" class="plan fade-in">
-        <h2>Premium</h2>
-        <p>For growing businesses with advanced features.</p>
-        <h3>99 PLN / month</h3>
-        <button>Subscribe</button>
-      </div>
-      <div class="plan" class="plan fade-in">
-        <h2>Enterprise</h2>
-        <p>Custom solutions and full support for companies.</p>
-        <h3>149 PLN / month</h3>
-        <button>Subscribe</button>
+<main>
+  <section class="section pricing">
+    <div class="container">
+      <h2>Choose your plan</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Starter</h3>
+          <div class="price">55 PLN / mo</div>
+          <ul>
+            <li>Basic templates</li>
+            <li>1 website</li>
+            <li>SSL & hosting</li>
+          </ul>
+          <a class="btn" href="register.html">Start now</a>
+        </div>
+        <div class="card">
+          <h3>Pro</h3>
+          <div class="price">79 PLN / mo</div>
+          <ul>
+            <li>All Starter features</li>
+            <li>3 websites</li>
+            <li>Email support</li>
+          </ul>
+          <a class="btn" href="register.html">Go Pro</a>
+        </div>
+        <div class="card">
+          <h3>Business</h3>
+          <div class="price">129 PLN / mo</div>
+          <ul>
+            <li>All Pro features</li>
+            <li>Unlimited websites</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn" href="register.html">Scale up</a>
+        </div>
       </div>
     </div>
-  </main>
+  </section>
+</main>
 
-  <footer>
-    <p>&copy; 2025 SiteStruck. All rights reserved.</p>
-  </footer>
-  <script>
-  const burger = document.getElementById('burger');
-  const navLinks = document.getElementById('nav-links');
-
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-</script>
-  <script src="auth.js" defer></script>
-
-
-
+<footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
+<script src="auth.js"></script>
 </body>
 </html>
+
 
