@@ -297,3 +297,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderReviews();
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const buyButtons = document.querySelectorAll(".buy-btn");
+
+    if (buyButtons.length > 0) {
+        buyButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const currentUser = JSON.parse(localStorage.getItem("loggedInUser"));
+                if (!currentUser) {
+                    alert("You must log in to purchase!");
+                    window.location.href = "login.html";
+                    return;
+                }
+
+                const plan = btn.getAttribute("data-plan");
+                alert(`You have purchased the ${plan} plan!`);
+
+                // Update user data
+                currentUser.hasPurchase = true;
+                currentUser.plan = plan;
+
+                localStorage.setItem("loggedInUser", JSON.stringify(currentUser));
+
+                // Update in users list
+                const users = JSON.parse(localStorage.getItem("users")) || [];
+                const userIndex = users.findIndex(u => u.username === currentUser.username);
+                if (userIndex !== -1) {
+                    users[userIndex] = currentUser;
+                }
+                localStorage.setItem("users", JSON.stringify(users));
+
+                window.location.href = "index.html";
+            });
+        });
+    }
+});
