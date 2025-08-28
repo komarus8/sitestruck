@@ -1,106 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Builder</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .checkbox-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        .checkbox-group label {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        button {
-            background: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #0056b3;
-        }
-        #result {
-            background: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generator - SiteStruck</title>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- JSZip CDN for ZIP creation -->
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 <body>
-    <div class="navbar" style="background:#333; padding:10px; color:white; display:flex; align-items:center;">
-  <a href="index.html" style="color:white; margin-right:20px;">Home</a>
-  <a href="generator.html" style="color:white; margin-right:20px;">Generator</a>
-  <a href="login.html" class="login-btn" style="color:white;">Login</a>
-</div>
-    <h1>Website Builder</h1>
-    <form id="generator-form">
-        <label for="site-name">Website Name:</label>
-        <input type="text" id="site-name" placeholder="My Website" required>
 
-        <label for="main-color">Main Color:</label>
-        <input type="color" id="main-color" value="#007bff">
+<header class="main-header">
+  <div class="header-left">
+    <img class="logo" src="logo.png" alt="Logo">
+    <div class="site-name">SiteStruck</div>
+  </div>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
+  </nav>
+</header>
 
-        <label for="font-family">Font Family:</label>
-        <select id="font-family">
-            <option value="Arial">Arial</option>
-            <option value="Verdana">Verdana</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Tahoma">Tahoma</option>
-        </select>
+<main>
+  <section class="section">
+    <div class="container">
+      <h2 class="center">Website generator</h2>
+      <div class="form-card">
+        <form id="generator-form">
+          <div class="form-row">
+            <label for="site-name">Site name</label>
+            <input id="site-name" type="text" placeholder="My Site" required>
+          </div>
 
-        <label>Sections:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="sections" value="Header"> Header</label>
-            <label><input type="checkbox" name="sections" value="About"> About</label>
-            <label><input type="checkbox" name="sections" value="Services"> Services</label>
-            <label><input type="checkbox" name="sections" value="Contact"> Contact</label>
-            <label><input type="checkbox" name="sections" value="Footer"> Footer</label>
-        </div>
+          <div class="form-row">
+            <label>Sections</label>
+            <div style="display:flex; gap:16px; flex-wrap:wrap">
+              <label><input type="checkbox" name="sections" value="Home" checked> Home</label>
+              <label><input type="checkbox" name="sections" value="About" checked> About</label>
+              <label><input type="checkbox" name="sections" value="Contact" checked> Contact</label>
+              <label><input type="checkbox" name="sections" value="Blog"> Blog</label>
+            </div>
+          </div>
 
-        <button type="submit">Generate</button>
-    </form>
+          <div class="form-row">
+            <label for="main-color">Main color</label>
+            <input id="main-color" type="color" value="#4caf50">
+          </div>
 
-    <div id="result"></div>
+          <div class="form-row">
+            <label for="font-family">Font</label>
+            <select id="font-family">
+              <option value="Arial">Arial</option>
+              <option value="Poppins">Poppins</option>
+              <option value="Roboto">Roboto</option>
+            </select>
+          </div>
 
-    <script src="generator.js"></script>
+          <div class="form-actions">
+            <button class="btn" type="submit">Generate ZIP</button>
+            <span style="color:#666">You’ll download a ready-to-edit project.</span>
+          </div>
+        </form>
+      </div>
+
+      <div id="result" class="center mt-32"></div>
+    </div>
+  </section>
+</main>
+
+<footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
+<script src="auth.js"></script>
 </body>
 </html>
-
