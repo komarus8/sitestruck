@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Register - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png"/><link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
-<header class="main-header">
-  <div class="header-left"><img class="logo" src="logo.png" alt="Logo"><div class="site-name">SiteStruck</div></div>
-  <nav class="navbar">
-    <a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="generator.html">Generator</a>
-    <a href="mypages.html">My Pages</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-    <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
-  </nav>
-</header>
-
-<main class="container section">
-  <div class="form-card">
-    <h2 class="center">Create account</h2>
+<body class="auth-page">
+  <div class="auth-card">
+    <h2>Create account</h2>
     <form id="register-form">
-      <div class="form-row"><label>Email</label><input id="reg-email" type="email" required></div>
-      <div class="form-row"><label>Password</label><input id="reg-password" type="password" required></div>
-      <div class="form-row"><label>Confirm password</label><input id="reg-confirm" type="password" required></div>
-      <div class="form-actions"><button class="btn" type="submit">Register</button></div>
+      <input id="reg-username" type="text" placeholder="Username" required>
+      <input id="reg-email" type="email" placeholder="Email" autocomplete="username" required>
+      <input id="reg-password" type="password" placeholder="Password" autocomplete="new-password" required>
+      <input id="reg-confirm" type="password" placeholder="Confirm password" autocomplete="new-password" required>
+      <button type="submit">Sign up</button>
     </form>
-    <p class="center mt-18">Have an account? <a href="login.html">Login</a></p>
+    <p>Already have an account? <a href="login.html">Login</a></p>
   </div>
-</main>
 
-<footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
 <script src="auth.js"></script>
 </body>
 </html>
