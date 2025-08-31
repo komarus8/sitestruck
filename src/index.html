@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - SiteStruck</title>
+  <title>SiteStruck - Home</title>
   <link rel="icon" href="logo.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
 <header class="main-header">
   <div class="header-left">
     <img class="logo" src="logo.png" alt="Logo">
@@ -17,97 +16,76 @@
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="pricing.html">Pricing</a>
+    <a href="generator.html">Generator</a>
+    <a href="mypages.html">My Pages</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <h1>Create your website in minutes</h1>
-    <p>Beautiful, responsive, and fast — without touching code.</p>
-    <a class="btn" href="pricing.html">Get Started</a>
-  </div>
-</section>
-
 <main>
-  <section class="section">
-    <div class="container">
-      <h2>Why choose SiteStruck?</h2>
-      <div class="grid-3">
-        <div class="card">
-          <img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/cursor.png" alt="Easy">
-          <h3>Easy</h3>
-          <p>Drag, drop, publish. Create confidently.</p>
-        </div>
-        <div class="card">
-          <img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/money.png" alt="Affordable">
-          <h3>Affordable</h3>
-          <p>Plans from just 55 PLN/month.</p>
-        </div>
-        <div class="card">
-          <img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/security-checked.png" alt="Reliable">
-          <h3>Reliable</h3>
-          <p>Fast, secure, and always online.</p>
-        </div>
-      </div>
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Build websites in minutes, not months</h1>
+      <p>Pick a plan, generate, download — done. No code needed.</p>
+      <a class="btn" href="pricing.html">Choose your plan</a>
     </div>
   </section>
 
-  <section class="section testimonials">
-    <div class="container">
-      <h2>What our clients say</h2>
-      <div class="grid-3">
-        <div class="card">
-          <img class="avatar" src="https://i.pravatar.cc/120?img=5" alt="Client 1">
-          <p>"SiteStruck got me online in minutes. Super easy!"</p>
-          <strong>— Annie K.</strong>
-        </div>
-        <div class="card">
-          <img class="avatar" src="https://i.pravatar.cc/120?img=15" alt="Client 2">
-          <p>"Best builder I tried. Affordable and powerful."</p>
-          <strong>— Michael W.</strong>
-        </div>
-        <div class="card">
-          <img class="avatar" src="https://i.pravatar.cc/120?img=30" alt="Client 3">
-          <p>"Fast, reliable, and great support. 10/10!"</p>
-          <strong>— Katty B.</strong>
-        </div>
-      </div>
+  <section class="section container">
+    <h2>Why choose SiteStruck?</h2>
+    <div class="grid-3">
+      <div class="card"><img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/cursor.png"/><h3>Easy</h3><p>Drag-and-drop style building without code.</p></div>
+      <div class="card"><img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/money.png"/><h3>Affordable</h3><p>Start from just 55 PLN / month.</p></div>
+      <div class="card"><img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/security-checked.png"/><h3>Reliable</h3><p>Fast, secure and always online.</p></div>
     </div>
   </section>
 
-  <section class="reviews-section">
-    <h2>Customer Reviews</h2>
-    <div id="average-rating">Average rating: <span id="avg-stars">0</span> ★</div>
-    <div id="reviews-list"></div>
+  <section class="section container testimonials">
+    <h2>What clients say</h2>
+    <div class="grid-3">
+      <div class="card"><img class="avatar" src="https://i.pravatar.cc/100?img=5"/><p>"Online in minutes. Super easy!"</p><strong>— Annie K.</strong></div>
+      <div class="card"><img class="avatar" src="https://i.pravatar.cc/100?img=12"/><p>"Best builder. Powerful & affordable."</p><strong>— Michael W.</strong></div>
+      <div class="card"><img class="avatar" src="https://i.pravatar.cc/100?img=32"/><p>"Fast & reliable. Support 10/10."</p><strong>— Katty B.</strong></div>
+    </div>
+  </section>
 
-    <!-- Formularz opinii (tylko dla zalogowanych) -->
-    <div id="review-form-container" style="display: none;">
-        <h3>Add Your Review</h3>
+  <section class="section container">
+    <h2 class="center">User reviews</h2>
+    <div class="reviews-wrap">
+      <p class="center mt-12">Average rating: <span id="avg-rating" class="avg">0.0</span> ★</p>
+      <div id="reviews-list" class="mt-18"></div>
+
+      <div id="review-form-wrap" class="form-card mt-24 hidden">
+        <h3 class="center">Add your review</h3>
         <form id="review-form">
-            <label for="review-text">Your review:</label>
-            <textarea id="review-text" required></textarea>
-
-            <label for="review-rating">Rating (1-5):</label>
-            <select id="review-rating" required>
-                <option value="1">1 ★</option>
-                <option value="2">2 ★★</option>
-                <option value="3">3 ★★★</option>
-                <option value="4">4 ★★★★</option>
-                <option value="5">5 ★★★★★</option>
+          <div class="form-row">
+            <label for="rev-rating">Rating (1-5)</label>
+            <select id="rev-rating" required>
+              <option value="">Select</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
             </select>
-
-            <button type="submit">Submit Review</button>
+          </div>
+          <div class="form-row">
+            <label for="rev-text">Your opinion</label>
+            <textarea id="rev-text" placeholder="Write a helpful review..." required></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn" type="submit">Submit</button>
+            <small>Only customers with a purchase can review. One review per user.</small>
+          </div>
         </form>
-    </div>
-    <p id="login-warning" style="color:red; display:none;">You must be logged in and have a purchase to add a review.</p>
-</section>
+      </div>
 
+      <p id="review-note" class="center mt-18 hidden">Log in & purchase a plan to leave a review.</p>
+      <p id="review-already" class="center mt-18 hidden">You already submitted a review. Thank you!</p>
+    </div>
+  </section>
 </main>
 
 <footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
 <script src="auth.js"></script>
+<script src="reviews.js"></script>
 </body>
 </html>
