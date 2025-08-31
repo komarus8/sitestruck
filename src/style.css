@@ -1,28 +1,37 @@
 :root{
-  --bg:#f6f7f9; --card:#fff; --text:#222; --muted:#666;
-  --brand:#4caf50; --brand-dark:#2f7d35; --ink:#1e1e1e; --ink-2:#111;
-  --link:#e9e9e9;
+  --bg:#f7f7f7; --text:#222; --muted:#666;
+  --brand:#4caf50; --brand-dark:#2f7d35;
+  --card:#fff; --header:#1e1e1e; --header-text:#eee; --link:#e0e0e0;
+  --danger:#cc3b3b;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:linear-gradient(135deg,var(--bg),#ededed); color:var(--text);
-  display:flex; flex-direction:column; min-height:100vh; overflow-x:hidden;
+  color:var(--text); background:linear-gradient(135deg,var(--bg),#efefef);
+  display:flex; flex-direction:column; min-height:100vh;
 }
+.container{width:min(1100px,92%); margin:0 auto;}
+main{flex:1; padding:40px 0;}
+.muted{color:var(--muted)}
+.center{text-align:center}
+.mt-8{margin-top:8px} .mt-24{margin-top:24px} .mt-32{margin-top:32px}
+.hidden{display:none !important}
 
-/* Header (spójny wszędzie) */
+/* Header */
 .main-header{
-  background:var(--ink); color:#fff; position:sticky; top:0; z-index:1000;
+  background:var(--header); color:var(--header-text);
   display:flex; align-items:center; justify-content:space-between;
   padding:14px 22px; box-shadow:0 2px 10px rgba(0,0,0,.15);
+  position:sticky; top:0; z-index:1000;
 }
 .header-left{display:flex; align-items:center; gap:10px}
 .logo{width:36px; height:36px; object-fit:contain}
-.site-name{font-weight:800; letter-spacing:.3px}
-.navbar{display:flex; align-items:center; gap:18px}
-.navbar a,.navbar button.linklike{
-  color:var(--link); text-decoration:none; font-weight:700; position:relative;
+.site-name{font-weight:700; letter-spacing:.3px; color:#fff}
+
+.navbar{display:flex; align-items:center; gap:20px}
+.navbar a, .navbar button.linklike{
+  color:var(--link); text-decoration:none; font-weight:600; position:relative;
   padding:8px 6px; background:none; border:none; cursor:pointer; font:inherit;
 }
 .navbar a:hover,.navbar button.linklike:hover{color:#fff}
@@ -31,37 +40,37 @@ body{
   background:var(--brand); transition:width .25s ease;
 }
 .navbar a:hover::after,.navbar button.linklike:hover::after{width:100%}
-#auth-link{
-  background:var(--brand); color:#fff; padding:8px 12px; border-radius:8px;
-}
-#auth-link:hover{background:var(--brand-dark)}
-
-/* Layout */
-.container{width:min(1100px,92%); margin:0 auto}
-main{flex:1; padding:40px 0}
+.navbar .active{color:#fff}
+.btn.small{padding:6px 10px; border-radius:8px}
+#auth-link.btn{background:var(--brand); color:#fff}
+#auth-link.btn:hover{background:var(--brand-dark)}
 
 /* Hero */
 .hero{
-  position:relative; background:url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+  position:relative;
+  background:url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80") no-repeat center/cover;
   min-height:56vh; display:grid; place-items:center; text-align:center; color:#fff;
 }
 .hero::after{content:""; position:absolute; inset:0; background:rgba(0,0,0,.45)}
 .hero-inner{position:relative; z-index:1; max-width:760px; padding:30px}
 .hero h1{font-size:clamp(28px,5vw,46px); margin:0 0 10px}
 .hero p{font-size:clamp(16px,2.5vw,20px); margin:0 0 22px; color:#f0f0f0}
+.hero-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
 
+/* Buttons */
 .btn{
   display:inline-block; background:linear-gradient(45deg,var(--brand),var(--brand-dark));
-  color:#fff; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:800;
+  color:#fff; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:700;
   box-shadow:0 5px 14px rgba(0,0,0,.18);
   transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease;
 }
 .btn:hover{transform:translateY(-2px); box-shadow:0 9px 18px rgba(0,0,0,.22)}
-.btn.secondary{background:#222}
+.btn.ghost{background:#222}
 
-/* Sections / cards / grids */
+/* Sections / cards */
 .section{padding:56px 0}
 .section h2{text-align:center; margin:0 0 24px; font-size:clamp(22px,3vw,32px)}
+
 .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
 @media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.grid-3{grid-template-columns:1fr}}
@@ -85,13 +94,6 @@ main{flex:1; padding:40px 0}
 .pricing ul{list-style:none; padding:0; margin:0 0 16px; color:var(--muted)}
 .pricing li{margin:6px 0}
 
-/* Reviews */
-.reviews-wrap{max-width:820px; margin:0 auto}
-.review-item{border-top:1px solid #e7e7e7; padding:14px 0}
-.review-item:first-child{border-top:none}
-.stars{color:#ffb400; letter-spacing:1px}
-.avg{font-weight:800}
-
 /* Forms */
 .form-card{
   background:var(--card); border-radius:12px; padding:24px;
@@ -104,18 +106,15 @@ input[type="text"],input[type="email"],input[type="password"],textarea,select{
 }
 textarea{min-height:120px; resize:vertical}
 .form-actions{display:flex; gap:12px; align-items:center}
-.inline{display:inline-block}
+.checkboxes{display:flex; gap:16px; flex-wrap:wrap}
+.btn.danger{background:var(--danger)}
 
-/* Lists */
-.list{background:var(--card); border-radius:12px; padding:18px; box-shadow:0 8px 22px rgba(0,0,0,.08)}
-.list li{display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #eee}
-.list li:last-child{border-bottom:none}
+/* Auth pages */
+.auth-page{display:grid; place-items:center; min-height:100vh; background:linear-gradient(135deg,#1e1e1e,var(--brand))}
+.auth-card{background:#fff; padding:40px 30px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.2); width:min(420px,92%); text-align:center}
+.auth-card h2{margin:0 0 16px}
+.auth-card input{margin:10px 0}
+.auth-card button{width:100%}
 
 /* Footer */
-footer{
-  background:#202020; color:#ccc; text-align:center; padding:18px; font-size:.95rem; margin-top:auto;
-}
-
-/* Utilities */
-.center{text-align:center} .mt-12{margin-top:12px} .mt-18{margin-top:18px} .mt-24{margin-top:24px} .mt-32{margin-top:32px}
-.hidden{display:none!important}
+footer{background:#202020; color:#ccc; text-align:center; padding:18px; font-size:.95rem; margin-top:auto}
