@@ -1,60 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="logo.png" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Generator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generator - SiteStruck</title>
+  <link rel="icon" href="logo.png" type="image/png"/><link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 <body>
 <header class="main-header">
-    <div class="logo">MyWeb</div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="generator.html" class="active">Generator</a></li>
-            <li><a href="login.html" class="btn">Login</a></li>
-        </ul>
-    </nav>
+  <div class="header-left"><img class="logo" src="logo.png" alt="Logo"><div class="site-name">SiteStruck</div></div>
+  <nav class="navbar">
+    <a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="generator.html">Generator</a>
+    <a href="mypages.html">My Pages</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
+  </nav>
 </header>
 
-<main class="container">
-    <h1>Website Generator</h1>
+<main class="container section">
+  <h2 class="center">Generate a site for your purchase</h2>
+
+  <div class="form-card">
     <form id="generator-form">
-        <label>Website Name:</label>
-        <input type="text" id="site-name" placeholder="Enter your website name" required>
-
-        <label>Main Color:</label>
-        <input type="color" id="main-color" value="#3498db">
-
-        <label>Font Family:</label>
+      <div class="form-row">
+        <label for="owned-site">Select your site</label>
+        <select id="owned-site" required></select>
+      </div>
+      <div class="form-row">
+        <label for="site-name">Site name</label>
+        <input type="text" id="site-name" placeholder="My Amazing Site" required>
+      </div>
+      <div class="form-row">
+        <label for="main-color">Main color</label>
+        <input type="color" id="main-color" value="#4caf50">
+      </div>
+      <div class="form-row">
+        <label for="font-family">Font</label>
         <select id="font-family">
-            <option value="Arial">Arial</option>
-            <option value="Verdana">Verdana</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Tahoma">Tahoma</option>
+          <option>Arial</option><option>Verdana</option><option>Tahoma</option><option>Georgia</option><option>Times New Roman</option>
         </select>
-
-        <label>Sections:</label>
+      </div>
+      <div class="form-row">
+        <label>Sections</label>
         <div>
-            <input type="checkbox" name="sections" value="About" checked> About
-            <input type="checkbox" name="sections" value="Services"> Services
-            <input type="checkbox" name="sections" value="Contact"> Contact
+          <label class="inline"><input type="checkbox" name="sections" value="About" checked> About</label>&nbsp;&nbsp;
+          <label class="inline"><input type="checkbox" name="sections" value="Contact" checked> Contact</label>&nbsp;&nbsp;
+          <label class="inline"><input type="checkbox" name="sections" value="Blog"> Blog</label>
         </div>
-
-        <button type="submit">Generate</button>
+      </div>
+      <div class="form-actions">
+        <button class="btn" type="submit">Generate & Download ZIP</button>
+      </div>
     </form>
+  </div>
 
-    <div id="result" class="result-box"></div>
-    <button id="downloadBtn" style="display:none;">Download as ZIP</button>
+  <div id="preview" class="generator-preview hidden"></div>
+  <div id="result" class="center mt-24"></div>
 </main>
 
+<footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
+<script src="auth.js"></script>
 <script src="generator.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </body>
 </html>
+
