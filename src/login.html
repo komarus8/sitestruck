@@ -1,54 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png"/><link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
 <header class="main-header">
-  <div class="header-left">
-    <img class="logo" src="logo.png" alt="Logo">
-    <div class="site-name">SiteStruck</div>
-  </div>
+  <div class="header-left"><img class="logo" src="logo.png" alt="Logo"><div class="site-name">SiteStruck</div></div>
   <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="generator.html">Generator</a>
+    <a href="mypages.html">My Pages</a><a href="about.html">About</a><a href="contact.html">Contact</a>
     <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
   </nav>
 </header>
 
-<main>
-  <section class="section">
-    <div class="container">
-      <h2 class="center">Log in to continue</h2>
-      <div class="form-card">
-        <form id="login-form">
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@example.com" required>
-          </div>
-          <div class="form-row">
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="••••••••" required>
-          </div>
-          <div class="form-actions">
-            <button class="btn" type="submit">Login</button>
-            <a class="btn secondary" href="register.html">Create account</a>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
+<main class="container section">
+  <div class="form-card">
+    <h2 class="center">Login</h2>
+    <form id="login-form">
+      <div class="form-row"><label>Email</label><input id="email" type="email" required></div>
+      <div class="form-row"><label>Password</label><input id="password" type="password" required></div>
+      <div class="form-actions"><button class="btn" type="submit">Login</button></div>
+    </form>
+    <p class="center mt-18">No account? <a href="register.html">Register</a></p>
+  </div>
 </main>
 
 <footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
 <script src="auth.js"></script>
 </body>
 </html>
+
 
