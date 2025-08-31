@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png"/><link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 <header class="main-header">
-  <div class="header-left"><img class="logo" src="logo.png" alt="Logo"><div class="site-name">SiteStruck</div></div>
+  <div class="header-left">
+    <img class="logo" src="logo.png" alt="Logo">
+    <div class="site-name">SiteStruck</div>
+  </div>
   <nav class="navbar">
-    <a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="generator.html">Generator</a>
-    <a href="mypages.html">My Pages</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-    <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="generator.html" class="auth-protected">Generator</a>
+    <a href="mypages.html" class="auth-protected">My Pages</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+    <a id="auth-link" href="login.html" class="btn small">Login</a>
   </nav>
 </header>
 
-<main>
-  <section class="section container">
-    <h2>We help you ship websites… fast.</h2>
-    <div class="grid-3">
-      <div class="card"><h3>Mission</h3><p>Empower anyone to launch a professional site in minutes.</p></div>
-      <div class="card"><h3>Values</h3><p>Simplicity, speed, reliability and fair pricing.</p></div>
-      <div class="card"><h3>Support</h3><p>We’re here for you — quick responses and clear docs.</p></div>
-    </div>
+<main class="container">
+  <section class="section">
+    <h1>About SiteStruck</h1>
+    <p>SiteStruck helps you generate clean, responsive websites instantly. It’s designed to be simple and developer-friendly so you can extend it later with real payments and backends.</p>
+    <p>Today you can simulate purchases, generate a ZIP, and manage your single active site. Tomorrow, plug in Stripe or PayPal and go live.</p>
   </section>
 </main>
 
