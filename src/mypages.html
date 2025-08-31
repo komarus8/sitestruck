@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Pages - SiteStruck</title>
+  <link rel="icon" href="logo.png" type="image/png"/><link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header class="main-header">
+  <div class="header-left"><img class="logo" src="logo.png" alt="Logo"><div class="site-name">SiteStruck</div></div>
+  <nav class="navbar">
+    <a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="generator.html">Generator</a>
+    <a href="mypages.html">My Pages</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
+  </nav>
+</header>
+
+<main class="container section">
+  <h2 class="center">Your purchased sites</h2>
+  <ul id="pages-list" class="list mt-18"></ul>
+  <div class="center mt-24">
+    <a class="btn" href="pricing.html?buynew=1">Buy New</a>
+    <a class="btn secondary" href="generator.html">Open Generator</a>
+  </div>
+</main>
+
+<footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
+<script src="auth.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const u = window.getCurrentUser();
+    if(!u){ location.href = "login.html?next=" + encodeURIComponent("mypages.html"); return; }
+    const list = document.getElementById("pages-list");
+    if(!u.sites || u.sites.length===0){
+      list.innerHTML = "<li>You have no sites yet. Choose a plan first.</li>";
+      return;
+    }
+    list.innerHTML = "";
+    u.sites.forEach((s,idx)=>{
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${s.name}</strong> <span>(${s.plan})</span>`;
+      list.appendChild(li);
+    });
+  });
+</script>
+</body>
+</html>
