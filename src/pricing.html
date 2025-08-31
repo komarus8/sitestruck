@@ -1,53 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pricing - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png"/><link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 <header class="main-header">
-  <div class="header-left"><img class="logo" src="logo.png" alt="Logo"><div class="site-name">SiteStruck</div></div>
+  <div class="header-left">
+    <img class="logo" src="logo.png" alt="Logo">
+    <div class="site-name">SiteStruck</div>
+  </div>
   <nav class="navbar">
-    <a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="generator.html">Generator</a>
-    <a href="mypages.html">My Pages</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-    <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
+    <a href="index.html">Home</a>
+    <a href="pricing.html" class="active">Pricing</a>
+    <a href="generator.html" class="auth-protected">Generator</a>
+    <a href="mypages.html" class="auth-protected">My Pages</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a id="auth-link" href="login.html" class="btn small">Login</a>
   </nav>
 </header>
 
-<main class="container section pricing">
-  <div class="card">
-    <h3>Basic</h3>
-    <p class="price">$10 / mo</p>
-    <ul><li>1 page</li><li>Email support</li><li>Starter components</li></ul>
-    <button class="btn buy-btn" data-plan="Basic">Buy Basic</button>
-  </div>
-  <div class="card">
-    <h3>Pro</h3>
-    <p class="price">$20 / mo</p>
-    <ul><li>Up to 5 pages</li><li>Priority support</li><li>Pro components</li></ul>
-    <button class="btn buy-btn" data-plan="Pro">Buy Pro</button>
-  </div>
-  <div class="card">
-    <h3>Premium</h3>
-    <p class="price">$50 / mo</p>
-    <ul><li>Unlimited pages</li><li>Premium support</li><li>All components</li></ul>
-    <button class="btn buy-btn" data-plan="Premium">Buy Premium</button>
-  </div>
+<main class="container">
+  <section class="section center">
+    <h1>Choose your plan</h1>
+    <p class="muted">Simulated checkout. Later, plug in Stripe/PayPal here.</p>
+  </section>
+
+  <section class="section grid-3 pricing">
+    <div class="card">
+      <h3>Basic</h3>
+      <div class="price">$10</div>
+      <ul>
+        <li>1 generated site (ZIP)</li>
+        <li>Core sections</li>
+        <li>Email support</li>
+      </ul>
+      <button class="btn buy-btn" data-plan="Basic">Buy Basic</button>
+    </div>
+    <div class="card">
+      <h3>Pro</h3>
+      <div class="price">$20</div>
+      <ul>
+        <li>1 generated site (ZIP)</li>
+        <li>Extra sections & fonts</li>
+        <li>Priority support</li>
+      </ul>
+      <button class="btn buy-btn" data-plan="Pro">Buy Pro</button>
+    </div>
+    <div class="card">
+      <h3>Premium</h3>
+      <div class="price">$50</div>
+      <ul>
+        <li>1 generated site (ZIP)</li>
+        <li>All sections & fonts</li>
+        <li>Dedicated support</li>
+      </ul>
+      <button class="btn buy-btn" data-plan="Premium">Buy Premium</button>
+    </div>
+  </section>
 </main>
 
 <footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
 <script src="auth.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", ()=>{
-    const buyBtns = document.querySelectorAll(".buy-btn");
-    buyBtns.forEach(btn=>{
-      btn.addEventListener("click", ()=>{
-        const plan = btn.dataset.plan;
-        window.handlePurchase(plan);
-      });
-    });
-  });
-</script>
+<script src="generator.js"></script>
 </body>
 </html>
