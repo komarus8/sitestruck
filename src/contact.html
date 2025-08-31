@@ -1,65 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" type="image/png"/><link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
 <header class="main-header">
-  <div class="header-left">
-    <img class="logo" src="logo.png" alt="Logo">
-    <div class="site-name">SiteStruck</div>
-  </div>
+  <div class="header-left"><img class="logo" src="logo.png" alt="Logo"><div class="site-name">SiteStruck</div></div>
   <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="generator.html">Generator</a>
+    <a href="mypages.html">My Pages</a><a href="about.html">About</a><a href="contact.html">Contact</a>
     <a id="auth-link" href="login.html" class="btn" style="padding:8px 14px">Login</a>
   </nav>
 </header>
 
 <main>
-  <section class="section">
-    <div class="container">
-      <h2>Contact us</h2>
-      <div class="form-card">
-        <form id="contact-form">
-          <div class="form-row">
-            <label for="c-name">Your name</label>
-            <input id="c-name" type="text" placeholder="John Doe" required>
-          </div>
-          <div class="form-row">
-            <label for="c-email">Email</label>
-            <input id="c-email" type="email" placeholder="john@example.com" required>
-          </div>
-          <div class="form-row">
-            <label for="c-msg">Message</label>
-            <textarea id="c-msg" placeholder="How can we help?" required></textarea>
-          </div>
-          <div class="form-actions">
-            <button class="btn" type="submit">Send</button>
-            <span class="muted" style="color:#666">We reply within 24h.</span>
-          </div>
-        </form>
-      </div>
+  <section class="section container">
+    <h2>Contact us</h2>
+    <div class="form-card">
+      <form id="contact-form">
+        <div class="form-row"><label>Name</label><input type="text" required></div>
+        <div class="form-row"><label>Email</label><input type="email" required></div>
+        <div class="form-row"><label>Message</label><textarea required></textarea></div>
+        <div class="form-actions"><button class="btn" type="submit">Send</button></div>
+      </form>
     </div>
+    <p class="center mt-18" id="contact-msg" style="display:none;">Thanks! We’ll get back to you soon.</p>
   </section>
 </main>
 
 <footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
 <script src="auth.js"></script>
 <script>
-  document.getElementById('contact-form').addEventListener('submit', (e)=>{
-    e.preventDefault();
-    alert('Thanks! We will get back to you soon.');
-    e.target.reset();
+  document.getElementById('contact-form').addEventListener('submit', e=>{
+    e.preventDefault(); document.getElementById('contact-msg').style.display='block'; e.target.reset();
   });
 </script>
 </body>
 </html>
-
