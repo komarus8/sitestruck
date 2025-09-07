@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Pages - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 <body>
+
 <header class="main-header">
   <div class="header-left">
     <img class="logo" src="logo.png" alt="Logo">
@@ -17,65 +18,37 @@
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="pricing.html">Pricing</a>
-    <a href="generator.html" class="auth-protected">Generator</a>
-    <a href="mypages.html" class="active auth-protected">My Pages</a>
+    <a href="generator.html" class="auth-only">Generator</a>
+    <a href="my-pages.html" class="auth-only">My Pages</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a id="auth-link" href="login.html" class="btn small">Login</a>
+    <a id="auth-link" class="btn small" href="login.html">Login</a>
   </nav>
 </header>
 
-<main class="container">
+<main>
   <section class="section">
-    <h1>Your pages</h1>
-    <div id="pages-empty" class="muted">You don’t have a generated site yet.</div>
-    <div id="pages-list"></div>
+    <div class="container" id="mypages-wrap">
+      <h2>My Pages</h2>
+      <p>Plan: <span class="badge" id="plan-badge">—</span> &nbsp; | &nbsp; Generated: <span class="badge" id="plan-quota">—</span></p>
+      <p id="plan-hint" class="mt-16"></p>
+
+      <div class="mt-24">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th><th>Font</th><th>Color</th><th>Sections</th><th>Created</th><th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="sites-tbody"></tbody>
+        </table>
+      </div>
+    </div>
   </section>
 </main>
 
 <footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
 <script src="auth.js"></script>
-<script src="generator.js"></script>
-<script>
-  // Render user's single page card
-  document.addEventListener('DOMContentLoaded', () => {
-    const user = getCurrentUser();
-    if (!user) { window.location.href = 'login.html?next=mypages.html'; return; }
-    const list = document.getElementById('pages-list');
-    const empty = document.getElementById('pages-empty');
-
-    if (!user.pages || user.pages.length === 0) {
-      empty.classList.remove('hidden');
-      return;
-    }
-    empty.classList.add('hidden');
-    const p = user.pages[0];
-
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <h3>${p.name}</h3>
-      <p class="muted">Color: <span style="display:inline-block;width:14px;height:14px;background:${p.color};border-radius:3px;vertical-align:middle;"></span>
-      &nbsp; ${p.color} · Font: ${p.font} · Sections: ${p.sections.join(', ') || '—'}</p>
-      <div class="form-actions mt-24">
-        <button class="btn" id="redownload">Re-download ZIP</button>
-        <button class="btn danger" id="delete-page">Delete page</button>
-      </div>
-    `;
-    list.appendChild(card);
-
-    document.getElementById('redownload').addEventListener('click', async () => {
-      await downloadGeneratedZip(p);
-    });
-    document.getElementById('delete-page').addEventListener('click', () => {
-      if (!confirm('Delete your generated site? You will be able to create a new one.')) return;
-      const u = getCurrentUser();
-      u.pages = [];
-      saveUser(u);
-      alert('Deleted. You can generate a new site now.');
-      location.reload();
-    });
-  });
-</script>
 </body>
 </html>
+
