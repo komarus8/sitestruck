@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
 <header class="main-header">
   <div class="header-left">
     <img class="logo" src="logo.png" alt="Logo">
@@ -16,19 +17,25 @@
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="pricing.html">Pricing</a>
-    <a href="generator.html" class="auth-protected">Generator</a>
-    <a href="mypages.html" class="auth-protected">My Pages</a>
-    <a href="about.html" class="active">About</a>
+    <a href="generator.html" class="auth-only">Generator</a>
+    <a href="my-pages.html" class="auth-only">My Pages</a>
+    <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a id="auth-link" href="login.html" class="btn small">Login</a>
+    <a id="auth-link" class="btn small" href="login.html">Login</a>
   </nav>
 </header>
 
-<main class="container">
+<main>
   <section class="section">
-    <h1>About SiteStruck</h1>
-    <p>SiteStruck helps you generate clean, responsive websites instantly. It’s designed to be simple and developer-friendly so you can extend it later with real payments and backends.</p>
-    <p>Today you can simulate purchases, generate a ZIP, and manage your single active site. Tomorrow, plug in Stripe or PayPal and go live.</p>
+    <div class="container">
+      <h2>About SiteStruck</h2>
+      <p class="mt-16">We help entrepreneurs launch fast. Our generator creates a clean, responsive starter site that you fully control. No vendor lock-in, no clutter.</p>
+      <div class="grid-3 mt-24">
+        <div class="card"><h3>Mission</h3><p>Make web creation simple, fast and affordable.</p></div>
+        <div class="card"><h3>Quality</h3><p>Semantic HTML, clean CSS, and a11y-first defaults.</p></div>
+        <div class="card"><h3>Support</h3><p>We’re here to help you go live quickly.</p></div>
+      </div>
+    </div>
   </section>
 </main>
 
