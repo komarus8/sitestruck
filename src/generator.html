@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Generator - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png"/>
-  <link rel="stylesheet" href="style.css"/>
-  <!-- JSZip for ZIP download -->
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- JSZip for ZIP generation -->
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 </head>
 <body>
+
 <header class="main-header">
   <div class="header-left">
     <img class="logo" src="logo.png" alt="Logo">
@@ -18,73 +19,63 @@
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="pricing.html">Pricing</a>
-    <a href="generator.html" class="active auth-protected">Generator</a>
-    <a href="mypages.html" class="auth-protected">My Pages</a>
+    <a href="generator.html" class="auth-only">Generator</a>
+    <a href="my-pages.html" class="auth-only">My Pages</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a id="auth-link" href="login.html" class="btn small">Login</a>
+    <a id="auth-link" class="btn small" href="login.html">Login</a>
   </nav>
 </header>
 
-<main class="container">
+<main>
   <section class="section">
-    <h1>Website Generator</h1>
-    <p class="muted">You can have only <strong>one active site</strong> per account. Delete your current site in <em>My Pages</em> to create a new one.</p>
+    <div class="container">
+      <h2 class="center">Generate your site</h2>
+      <p class="center" id="quota-info"></p>
 
-    <div id="no-purchase" class="form-card hidden">
-      <p>You need to buy a plan first.</p>
-      <a class="btn" href="pricing.html">Buy a plan</a>
-    </div>
-
-    <div id="has-site" class="form-card hidden">
-      <p>You already have an active generated site. Manage it in <a href="mypages.html">My Pages</a>.</p>
-      <a class="btn" href="mypages.html">Go to My Pages</a>
-    </div>
-
-    <div id="generator-wrap" class="form-card hidden">
-      <form id="generator-form">
+      <form id="generator-form" class="form-card mt-24">
         <div class="form-row">
           <label for="site-name">Site name</label>
-          <input id="site-name" type="text" placeholder="My Awesome Site" required>
+          <input id="site-name" type="text" placeholder="My Awesome Site" />
         </div>
 
         <div class="form-row">
-          <label for="main-color">Main color</label>
-          <input id="main-color" type="color" value="#4caf50">
+          <label for="main-color">Brand color</label>
+          <input id="main-color" type="color" value="#4caf50" />
         </div>
 
         <div class="form-row">
           <label for="font-family">Font family</label>
           <select id="font-family">
-            <option value="Arial">Arial</option>
-            <option value="Inter">Inter</option>
-            <option value="Roboto">Roboto</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Poppins">Poppins</option>
+            <option>Arial</option>
+            <option>Inter</option>
+            <option>Roboto</option>
+            <option>Georgia</option>
+            <option>Trebuchet MS</option>
           </select>
         </div>
 
         <div class="form-row">
           <label>Sections</label>
-          <div class="checkboxes">
-            <label><input type="checkbox" name="sections" value="About" checked> About</label>
-            <label><input type="checkbox" name="sections" value="Contact" checked> Contact</label>
-            <label><input type="checkbox" name="sections" value="Blog"> Blog</label>
+          <div style="display:grid; gap:8px;">
+            <label><input type="checkbox" name="sections" value="About" checked /> About</label>
+            <label><input type="checkbox" name="sections" value="Contact" checked /> Contact</label>
+            <label><input type="checkbox" name="sections" value="Blog" /> Blog</label>
           </div>
         </div>
 
         <div class="form-actions">
-          <button class="btn" type="submit">Generate & Download ZIP</button>
+          <button type="submit" class="btn">Generate & Download ZIP</button>
+          <a class="btn small" href="my-pages.html">My Pages</a>
         </div>
-      </form>
 
-      <div id="result" class="mt-24"></div>
+        <div id="result" class="mt-16"></div>
+      </form>
     </div>
   </section>
 </main>
 
 <footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
 <script src="auth.js"></script>
-<script src="generator.js"></script>
 </body>
 </html>
