@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home - SiteStruck</title>
-  <link rel="icon" href="logo.png" type="image/png"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
 <header class="main-header">
   <div class="header-left">
     <img class="logo" src="logo.png" alt="Logo">
@@ -16,109 +17,104 @@
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="pricing.html">Pricing</a>
-    <a href="generator.html" class="auth-protected">Generator</a>
-    <a href="mypages.html" class="auth-protected">My Pages</a>
+    <a href="generator.html" class="auth-only">Generator</a>
+    <a href="my-pages.html" class="auth-only">My Pages</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a id="auth-link" href="login.html" class="btn small">Login</a>
+    <a id="auth-link" class="btn small" href="login.html">Login</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-inner container">
-    <h1>Build your website in minutes, not months</h1>
-    <p>Choose a plan, generate a beautiful site, download ZIP – done.</p>
-    <div class="hero-actions">
-      <a class="btn" href="pricing.html">Choose your plan</a>
-      <a class="btn ghost auth-protected" href="generator.html">Open Generator</a>
+<section class="hero" role="banner">
+  <div class="hero-inner">
+    <h1>Create websites in minutes, not months</h1>
+    <p>Buy a plan, log in, and generate a polished starter site with one click.</p>
+    <div class="form-actions" style="justify-content:center">
+      <a class="btn" href="pricing.html">Get Started</a>
+      <a class="btn small" href="generator.html">Try Generator</a>
     </div>
   </div>
 </section>
 
-<main class="container">
-  <section class="section grid-3">
-    <div class="card center">
-      <img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/bolt.png" alt="Fast">
-      <h3>Fast</h3>
-      <p>Spin up a site in seconds – download ready ZIP.</p>
-    </div>
-    <div class="card center">
-      <img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/combo-chart.png" alt="Simple">
-      <h3>Simple</h3>
-      <p>No code. Clean templates. Easy customization.</p>
-    </div>
-    <div class="card center">
-      <img class="icon-lg" src="https://img.icons8.com/ios-filled/100/4caf50/smartphone-tablet.png" alt="Responsive">
-      <h3>Responsive</h3>
-      <p>Looks great on desktop, tablet and phone.</p>
-    </div>
-  </section>
-
-  <!-- Testimonials (static seed) -->
-  <section class="section testimonials">
-    <h2 class="center">What our clients say</h2>
-    <div class="grid-3">
-      <div class="card">
-        <img class="avatar" src="https://i.pravatar.cc/150?img=11" alt="client">
-        <p>"My site was online in minutes. Amazing!"</p>
-        <strong>— Annie K.</strong>
-      </div>
-      <div class="card">
-        <img class="avatar" src="https://i.pravatar.cc/150?img=22" alt="client">
-        <p>"Affordable and powerful. Highly recommend."</p>
-        <strong>— Michael W.</strong>
-      </div>
-      <div class="card">
-        <img class="avatar" src="https://i.pravatar.cc/150?img=33" alt="client">
-        <p>"Support was instant. 10/10!"</p>
-        <strong>— Katty B.</strong>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reviews (only for users with purchase; one review per user) -->
+<main>
   <section class="section">
-    <h2 class="center">Your rating matters</h2>
-    <div class="form-card" id="reviews-box">
-      <div id="avg-wrap" class="center mt-8">
-        <strong>Average rating: <span id="avg-stars">0.0</span> ★</strong> (<span id="reviews-count">0</span> reviews)
+    <div class="container">
+      <h2 class="center">Why Choose SiteStruck?</h2>
+      <div class="grid-3">
+        <div class="card center">
+          <div class="i">⚡</div>
+          <h3>Fast</h3>
+          <p>Generate a complete, responsive starter in seconds.</p>
+        </div>
+        <div class="card center">
+          <div class="i">🧩</div>
+          <h3>Simple</h3>
+          <p>Pick sections, colors, fonts. We build the rest for you.</p>
+        </div>
+        <div class="card center">
+          <div class="i">🔒</div>
+          <h3>Yours</h3>
+          <p>Download a ZIP you fully own and can host anywhere.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div id="login-warning" class="muted mt-24 hidden">
-        You must be logged in and have a purchased plan to post a review.
+  <section class="section testimonials">
+    <div class="container">
+      <h2 class="center">What our clients say</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="avatar">AK</div>
+          <p><em>“My site was online in minutes. Love the simplicity.”</em></p>
+          <p><strong>— Annie K.</strong></p>
+        </div>
+        <div class="card">
+          <div class="avatar">MW</div>
+          <p><em>“Best value for money. Clean code and design.”</em></p>
+          <p><strong>— Michael W.</strong></p>
+        </div>
+        <div class="card">
+          <div class="avatar">KB</div>
+          <p><em>“Support answered instantly. 10/10!”</em></p>
+          <p><strong>— Katty B.</strong></p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div id="review-already" class="muted mt-24 hidden">
-        You have already posted a review. Thanks!
-      </div>
+  <section class="section">
+    <div class="container reviews-wrap" id="reviews-container">
+      <h2 class="center">Community reviews</h2>
+      <p class="center">Average rating: <strong id="avg-rating">—</strong></p>
+      <div id="reviews-list" class="mt-16"></div>
 
-      <div id="review-form-container" class="hidden">
-        <form id="review-form">
-          <label for="review-rating">Rating (1–5)</label>
-          <select id="review-rating" required>
-            <option value="5">5 ★</option>
-            <option value="4">4 ★</option>
-            <option value="3">3 ★</option>
-            <option value="2">2 ★</option>
-            <option value="1">1 ★</option>
+      <p id="review-notice" class="center mt-24"></p>
+
+      <form id="review-form" class="form-card hidden" style="margin-top:16px;">
+        <div class="form-row">
+          <label for="review-rating">Your rating</label>
+          <select id="review-rating">
+            <option value="5" selected>★★★★★ (5)</option>
+            <option value="4">★★★★☆ (4)</option>
+            <option value="3">★★★☆☆ (3)</option>
+            <option value="2">★★☆☆☆ (2)</option>
+            <option value="1">★☆☆☆☆ (1)</option>
           </select>
-
+        </div>
+        <div class="form-row">
           <label for="review-text">Your review</label>
-          <textarea id="review-text" placeholder="Write a short review..." required></textarea>
-
-          <div class="form-actions">
-            <button type="submit" class="btn">Publish review</button>
-          </div>
-        </form>
-      </div>
-
-      <div id="reviews-list" class="mt-24"></div>
+          <textarea id="review-text" placeholder="Write a short review…"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Submit review</button>
+        </div>
+      </form>
     </div>
   </section>
 </main>
 
 <footer><p>&copy; 2025 SiteStruck. All rights reserved.</p></footer>
 <script src="auth.js"></script>
-<script src="generator.js"></script>
 </body>
 </html>
